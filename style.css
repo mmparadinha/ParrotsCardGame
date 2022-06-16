@@ -16,12 +16,10 @@ body {
 }
 
 .titulo {
-    background-color: blue;
     text-align: center;
 }
 
 main {
-    background-color: red;
     margin-top: 47px;
     display: flex;
     flex-wrap: wrap;
@@ -29,7 +27,7 @@ main {
     gap: 34px;
 }
 
-.carta {
+.card {
     background-color: #A7E9AF;
     width: 117px;
     height: 146px;
@@ -40,9 +38,17 @@ main {
     justify-content: center;
 }
 
-.carta img {
+.card img {
     width: 100px;
     height: 100px;
+}
+
+.front-face img:last-of-type {
+    display: none;
+}
+
+.back-face img:first-of-type {
+    display: none;
 }
 
 @media (max-width: 335px) {
