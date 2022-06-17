@@ -19,12 +19,13 @@ body {
     text-align: center;
 }
 
-main {
+ul {
     margin-top: 47px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 34px;
+    background-color: blue;
 }
 
 .card {

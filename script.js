@@ -1,150 +1,165 @@
-let combinacoes = prompt('Olá! Com quantas combinações deseja jogar? (2-7)');
-let main = document.querySelector('main');
-const list = document.querySelector('ul');
+let combinacoes = Number(prompt('Olá! Com quantas combinações deseja jogar? (2-7)'));
+const cartas = [];
+const ul = document.querySelector("ul");
+let parrot1;
+let parrot2;
 
 while (combinacoes < 2 || combinacoes > 7) {
-    combinacoes = prompt('Não podemos iniciar o jogo com esse número de combinações. Escolha novamente! (2-7)');
-}
-
-/*function tirarCartaBobRoss() {
-    main.innerHTML += cartas;
-    cartas.push(`
-<div class="card front-face" onclick="virarCarta(this)">
-<img src="images/front.png" alt="parrot">
-<img src="images/bobrossparrot.gif" alt="bobrossparrot">
-</div>`)
+    combinacoes = Number(prompt('Não podemos iniciar o jogo com esse número de combinações. Escolha novamente! (2-7)'));
 }
 
 function tirarCartaBobRoss() {
-    main.innerHTML += `
-    <div class="card front-face" onclick="virarCarta(this)">
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/bobrossparrot.gif" alt="bobrossparrot">
+   `);
+    cartas.push(`
         <img src="images/front.png" alt="parrot">
         <img src="images/bobrossparrot.gif" alt="bobrossparrot">
-    </div>
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/bobrossparrot.gif" alt="bobrossparrot">
-    </div>`;
+    `);
 }
 
 function tirarCartaExplody() {
-    main.innerHTML += `
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/explodyparrot.gif" alt="explodyparrot">
-    </div>
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/explodyparrot.gif" alt="explodyparrot">
-    </div>`;
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/explodyparrot.gif" alt="explodyparrot">
+    `);
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/explodyparrot.gif" alt="explodyparrot">
+    `);
 }
 
 function tirarCartaFiesta() {
-    main.innerHTML += `
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/Fiestaparrot.gif" alt="Fiestaparrot">
-    </div>
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/Fiestaparrot.gif" alt="Fiestaparrot">
-    </div>`;
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/Fiestaparrot.gif" alt="Fiestaparrot">
+    `);
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/Fiestaparrot.gif" alt="Fiestaparrot">
+    `);
 }
 
 function tirarCartaMetal() {
-    main.innerHTML += `
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/Metalparrot.gif" alt="Metalparrot">
-    </div>
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/Metalparrot.gif" alt="Metalparrot">
-    </div>`;
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/Metalparrot.gif" alt="Metalparrot">
+    `);
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/Metalparrot.gif" alt="Metalparrot">
+    `);
 }
 
 function tirarCartaRevertit() {
-    main.innerHTML += `
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/Revertitparrot.gif" alt="Revertitparrot">
-    </div>
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/Revertitparrot.gif" alt="Revertitparrot">
-    </div>`;
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/Revertitparrot.gif" alt="Revertitparrot">
+    `);
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/Revertitparrot.gif" alt="Revertitparrot">
+    `);
 }
 
 function tirarCartaTriplets() {
-    main.innerHTML += `
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/Tripletsparrot.gif" alt="Tripletsparrot">
-    </div>
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/Tripletsparrot.gif" alt="Tripletsparrot">
-    </div>`;
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/Tripletsparrot.gif" alt="Tripletsparrot">
+    `);
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/Tripletsparrot.gif" alt="Tripletsparrot">
+    `);
 }
 
 function tirarCartaUnicorn() {
-    main.innerHTML += `
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/Unicornparrot.gif" alt="Unicornparrot">
-    </div>
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/Unicornparrot.gif" alt="Unicornparrot">
-    </div>`;
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/Unicornparrot.gif" alt="Unicornparrot">
+    `);
+    cartas.push(`
+    <img src="images/front.png" alt="parrot">
+    <img src="images/Unicornparrot.gif" alt="Unicornparrot">
+    `);
 }
 
 //troço horroroso, mas eu tava travado tentando fazer bonito
-if (combinacoes == 2) {
-        tirarCartaBobRoss();
-        tirarCartaExplody();
-    } else if (combinacoes == 3) {
-            tirarCartaBobRoss();
-            tirarCartaExplody();
-            tirarCartaFiesta();
-        } else if (combinacoes == 4) {
-                tirarCartaBobRoss();
-                tirarCartaExplody();
-                tirarCartaFiesta();
-                tirarCartaMetal();
-            } else if (combinacoes == 5) {
-                    tirarCartaBobRoss();
-                    tirarCartaExplody();
-                    tirarCartaFiesta();
-                    tirarCartaMetal();
-                    tirarCartaRevertit();
-                } else if (combinacoes == 6) {
-                        tirarCartaBobRoss();
-                        tirarCartaExplody();
-                        tirarCartaFiesta();
-                        tirarCartaMetal();
-                        tirarCartaRevertit();
-                        tirarCartaTriplets();
-                    } else {
-                        tirarCartaBobRoss();
-                        tirarCartaExplody();
-                        tirarCartaFiesta();
-                        tirarCartaMetal();
-                        tirarCartaRevertit();
-                        tirarCartaTriplets();
-                        tirarCartaUnicorn();
-                    }*/
+if (combinacoes === 2) {
+    tirarCartaBobRoss();
+    tirarCartaExplody();
+} else if (combinacoes === 3) {
+    tirarCartaBobRoss();
+    tirarCartaExplody();
+    tirarCartaFiesta();
+} else if (combinacoes === 4) {
+    tirarCartaBobRoss();
+    tirarCartaExplody();
+    tirarCartaFiesta();
+    tirarCartaMetal();
+} else if (combinacoes === 5) {
+    tirarCartaBobRoss();
+    tirarCartaExplody();
+    tirarCartaFiesta();
+    tirarCartaMetal();
+    tirarCartaRevertit();
+} else if (combinacoes === 6) {
+    tirarCartaBobRoss();
+    tirarCartaExplody();
+    tirarCartaFiesta();
+    tirarCartaMetal();
+    tirarCartaRevertit();
+    tirarCartaTriplets();
+} else {
+    tirarCartaBobRoss();
+    tirarCartaExplody();
+    tirarCartaFiesta();
+    tirarCartaMetal();
+    tirarCartaRevertit();
+    tirarCartaTriplets();
+    tirarCartaUnicorn();
+}
 
 function comparador() {
     return Math.random() - 0.5;
 }
 
-list.sort(comparador);
+cartas.sort(comparador);
+
+for (const element of cartas) {
+    ul.innerHTML += `
+      <li class="card front-face" onclick="virarCarta(this)">${element}</li>
+    `;
+}
 
 function virarCarta(element) {
     element.classList.toggle('front-face');
     element.classList.toggle('back-face');
+    let p = 1;
+
+    if (parrot1 == undefined) {
+        parrot1 = element.innerHTML;
+    } else {
+        parrot2 = element.innerHTML;
+        p += 1;
+    }
+
+    if (p === 2) {
+        if (parrot1 != parrot2) {
+            alert("errôô");
+            //virando só a última carta
+            //element.classList.toggle('front-face');
+            //element.classList.toggle('back-face');
+        } else {
+            alert("acertô mizeravi");
+        }
+        parrot1 = undefined;
+        parrot2 = undefined;
+    }
 }
+
+
 
 
 
