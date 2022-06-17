@@ -1,25 +1,21 @@
 let combinacoes = prompt('Olá! Com quantas combinações deseja jogar? (2-7)');
 let main = document.querySelector('main');
-const cartas = [];
+const list = document.querySelector('ul');
 
 while (combinacoes < 2 || combinacoes > 7) {
     combinacoes = prompt('Não podemos iniciar o jogo com esse número de combinações. Escolha novamente! (2-7)');
 }
 
-function tirarCartaBobRoss() {
-    main.innerHTML = cartas;
+/*function tirarCartaBobRoss() {
+    main.innerHTML += cartas;
     cartas.push(`
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/bobrossparrot.gif" alt="bobrossparrot">
-    </div>
-    <div class="card front-face" onclick="virarCarta(this)">
-        <img src="images/front.png" alt="parrot">
-        <img src="images/bobrossparrot.gif" alt="bobrossparrot">
-    </div>`)
+<div class="card front-face" onclick="virarCarta(this)">
+<img src="images/front.png" alt="parrot">
+<img src="images/bobrossparrot.gif" alt="bobrossparrot">
+</div>`)
 }
 
-/*function tirarCartaBobRoss() {
+function tirarCartaBobRoss() {
     main.innerHTML += `
     <div class="card front-face" onclick="virarCarta(this)">
         <img src="images/front.png" alt="parrot">
@@ -29,7 +25,7 @@ function tirarCartaBobRoss() {
         <img src="images/front.png" alt="parrot">
         <img src="images/bobrossparrot.gif" alt="bobrossparrot">
     </div>`;
-}*/
+}
 
 function tirarCartaExplody() {
     main.innerHTML += `
@@ -137,13 +133,13 @@ if (combinacoes == 2) {
                         tirarCartaRevertit();
                         tirarCartaTriplets();
                         tirarCartaUnicorn();
-                    }
+                    }*/
 
 function comparador() {
     return Math.random() - 0.5;
 }
 
-cartas.sort(comparador);
+list.sort(comparador);
 
 function virarCarta(element) {
     element.classList.toggle('front-face');
