@@ -19,16 +19,27 @@ body {
     text-align: center;
 }
 
+.contador {
+    background-color: blue;
+}
+
+.jogadas {
+    background-color: yellow;
+}
+
+.acertos {
+    background-color: red;
+}
+
 ul {
     margin-top: 47px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 34px;
-    background-color: blue;
 }
 
-.card {
+li {
     background-color: #A7E9AF;
     width: 117px;
     height: 146px;
@@ -39,17 +50,21 @@ ul {
     justify-content: center;
 }
 
-.card img {
+li img {
     width: 100px;
     height: 100px;
 }
 
-.front-face img:last-of-type {
+li img:last-of-type {
     display: none;
 }
 
-.back-face img:first-of-type {
+.back img:first-of-type {
     display: none;
+}
+
+.back img:last-of-type {
+    display: unset;
 }
 
 @media (max-width: 335px) {
