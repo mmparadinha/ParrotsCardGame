@@ -59,55 +59,55 @@ function tirarCartaExplody() {
 function tirarCartaFiesta() {
     embaralhamento.push(`
 <img src="images/front.png" alt="parrot">
-<img src="images/Fiestaparrot.gif" alt="Fiestaparrot">
+<img src="images/fiestaparrot.gif" alt="fiestaparrot">
 `);
     embaralhamento.push(`
 <img src="images/front.png" alt="parrot">
-<img src="images/Fiestaparrot.gif" alt="Fiestaparrot">
+<img src="images/fiestaparrot.gif" alt="fiestaparrot">
 `);
 }
 
 function tirarCartaMetal() {
     embaralhamento.push(`
 <img src="images/front.png" alt="parrot">
-<img src="images/Metalparrot.gif" alt="Metalparrot">
+<img src="images/metalparrot.gif" alt="metalparrot">
 `);
     embaralhamento.push(`
 <img src="images/front.png" alt="parrot">
-<img src="images/Metalparrot.gif" alt="Metalparrot">
+<img src="images/metalparrot.gif" alt="metalparrot">
 `);
 }
 
 function tirarCartaRevertit() {
     embaralhamento.push(`
 <img src="images/front.png" alt="parrot">
-<img src="images/Revertitparrot.gif" alt="Revertitparrot">
+<img src="images/revertitparrot.gif" alt="revertitparrot">
 `);
     embaralhamento.push(`
 <img src="images/front.png" alt="parrot">
-<img src="images/Revertitparrot.gif" alt="Revertitparrot">
+<img src="images/revertitparrot.gif" alt="revertitparrot">
 `);
 }
 
 function tirarCartaTriplets() {
     embaralhamento.push(`
 <img src="images/front.png" alt="parrot">
-<img src="images/Tripletsparrot.gif" alt="Tripletsparrot">
+<img src="images/tripletsparrot.gif" alt="tripletsparrot">
 `);
     embaralhamento.push(`
 <img src="images/front.png" alt="parrot">
-<img src="images/Tripletsparrot.gif" alt="Tripletsparrot">
+<img src="images/tripletsparrot.gif" alt="tripletsparrot">
 `);
 }
 
 function tirarCartaUnicorn() {
     embaralhamento.push(`
 <img src="images/front.png" alt="parrot">
-<img src="images/Unicornparrot.gif" alt="Unicornparrot">
+<img src="images/unicornparrot.gif" alt="unicornparrot">
 `);
     embaralhamento.push(`
 <img src="images/front.png" alt="parrot">
-<img src="images/Unicornparrot.gif" alt="Unicornparrot">
+<img src="images/unicornparrot.gif" alt="unicornparrot">
 `);
 }
 
